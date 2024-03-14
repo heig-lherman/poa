@@ -1,0 +1,60 @@
+Vector1 : constructed
+v1 avant déplacement :
+Vector information:
+    Name: Vector1
+    Size: 5
+    Memory address of first element: 0x5648b869e2b0
+    Memory address of vector: 0x7ffd37274b20
+Vector1 : move constructed from: Vector1
+v1 - après tentative de déplacement de v1 dans v2:
+Vector information:
+    Name: 
+    Size: 0
+    Memory address of first element: 0
+    Memory address of vector: 0x7ffd37274b20
+v2 - après tentative de déplacement de v1 dans v2:
+Vector information:
+    Name: Vector1
+    Size: 5
+    Memory address of first element: 0x5648b869e2b0
+    Memory address of vector: 0x7ffd37274b50
+VectorFromFun : constructed
+VectorFromFun, crée dans la fonction createVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x5648b869f2e0
+    Memory address of vector: 0x7ffd37274b80
+VectorFromFun, tel que retourné par createVector()
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x5648b869f2e0
+    Memory address of vector: 0x7ffd37274b80
+Passage de VectorFromFun avec tentative de déplacement à processVector
+VectorFromFun : move constructed from: VectorFromFun
+VectorFromFun dans processVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x5648b869f2e0
+    Memory address of vector: 0x7ffd37274bb0
+VectorFromFun : destructed
+processVector(createVector())
+VectorFromFun : constructed
+VectorFromFun, crée dans la fonction createVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x5648b869f2e0
+    Memory address of vector: 0x7ffd37274bb0
+VectorFromFun dans processVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x5648b869f2e0
+    Memory address of vector: 0x7ffd37274bb0
+VectorFromFun : destructed
+ : destructed
+Vector1 : destructed
+ : destructed

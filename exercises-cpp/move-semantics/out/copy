@@ -1,0 +1,64 @@
+Vector1 : constructed
+v1 avant déplacement :
+Vector information:
+    Name: Vector1
+    Size: 5
+    Memory address of first element: 0x64cf82c012b0
+    Memory address of vector: 0x7ffd1d717660
+Vector1 : copy constructed from: Vector1
+v1 - après tentative de déplacement de v1 dans v2:
+Vector information:
+    Name: Vector1
+    Size: 5
+    Memory address of first element: 0x64cf82c012b0
+    Memory address of vector: 0x7ffd1d717660
+v2 - après tentative de déplacement de v1 dans v2:
+Vector information:
+    Name: Vector1
+    Size: 5
+    Memory address of first element: 0x64cf82c022e0
+    Memory address of vector: 0x7ffd1d717690
+VectorFromFun : constructed
+VectorFromFun, crée dans la fonction createVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x64cf82c02300
+    Memory address of vector: 0x7ffd1d7175f0
+VectorFromFun : copy constructed from: VectorFromFun
+VectorFromFun : destructed
+VectorFromFun, tel que retourné par createVector()
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x64cf82c02320
+    Memory address of vector: 0x7ffd1d7176c0
+Passage de VectorFromFun avec tentative de déplacement à processVector
+VectorFromFun : copy constructed from: VectorFromFun
+VectorFromFun dans processVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x64cf82c02300
+    Memory address of vector: 0x7ffd1d7176f0
+VectorFromFun : destructed
+processVector(createVector())
+VectorFromFun : constructed
+VectorFromFun, crée dans la fonction createVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x64cf82c02300
+    Memory address of vector: 0x7ffd1d7175f0
+VectorFromFun : copy constructed from: VectorFromFun
+VectorFromFun : destructed
+VectorFromFun dans processVector:
+Vector information:
+    Name: VectorFromFun
+    Size: 5
+    Memory address of first element: 0x64cf82c02340
+    Memory address of vector: 0x7ffd1d7176f0
+VectorFromFun : destructed
+VectorFromFun : destructed
+Vector1 : destructed
+Vector1 : destructed
