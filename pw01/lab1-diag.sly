@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-15" standalone="no"?>
+<classDiagram>
+  <diagramElements defaultViewEntities="ALL" defaultViewEnum="true" defaultViewMethods="TYPE_AND_NAME" defaultVisibleTypes="true" informations="" name="MatrixReloaded">
+    <entity entityType="CLASS" id="1068" isAbstract="false" name="Matrix" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="matrix" type="unsigned**" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="cols" type="size_t" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="rows" type="size_t" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="mod" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="mod" type="unsgined"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="rows" type="size_t"/>
+        <variable const="false" name="cols" type="size_t"/>
+        <variable const="false" name="mod" type="unsigned"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="Matrix&amp;&amp;"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="~Matrix" returnType="" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="operator=" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+    </entity>
+    <inheritance id="221">
+      <child>169</child>
+      <parent>1</parent>
+    </inheritance>
+    <inheritance id="222">
+      <child>214</child>
+      <parent>1</parent>
+    </inheritance>
+    <inheritance id="230">
+      <child>223</child>
+      <parent>1</parent>
+    </inheritance>
+    <entity entityType="CLASS" id="1" isAbstract="true" name="Operation" visibility="PUBLIC">
+      <method is-constructor="true" isAbstract="true" isStatic="false" name="~Operation" returnType="" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="apply" returnType="long" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="a" type="long"/>
+        <variable const="false" name="b" type="long"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="169" isAbstract="false" name="AddOperation" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="apply" returnType="long" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="a" type="long"/>
+        <variable const="false" name="b" type="long"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="214" isAbstract="false" name="SubtractOperation" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="apply" returnType="long" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="a" type="long"/>
+        <variable const="false" name="b" type="long"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="223" isAbstract="false" name="MultiplyOperation" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="apply" returnType="long" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="a" type="long"/>
+        <variable const="false" name="b" type="long"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="231" isAbstract="false" name="Matrix" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="matrix" type="unsigned**" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="cols" type="size_t" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="rows" type="size_t" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="mod" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="mod" type="unsgined"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="rows" type="size_t"/>
+        <variable const="false" name="cols" type="size_t"/>
+        <variable const="false" name="mod" type="unsigned"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="Matrix" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="Matrix&amp;&amp;"/>
+      </method>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="~Matrix" returnType="" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="operator=" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="operator=" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="Matrix&amp;&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="operator&lt;&lt;" returnType="ostream&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="os" type="ostream&amp;"/>
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="get" returnType="unsigned" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="i" type="size_t"/>
+        <variable const="false" name="j" type="size_t"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="addStatic_{const}" returnType="Matrix" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="subtractStatic_{const}" returnType="Matrix" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="multiplyStatic_{const}" returnType="Matrix" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="add" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="subtract" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="multiply" returnType="Matrix&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="addDynamic_{const}" returnType="Matrix*" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="subtractDynamic_{const}" returnType="Matrix*" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="multiplyDynamic_{const}" returnType="Matrix*" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="applyOperation_{const}" returnType="void" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="other" type="{const}_Matrix&amp;"/>
+        <variable const="false" name="op" type="{const}_Operation&amp;"/>
+        <variable const="false" name="container" type="Matrix&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="initializeMatrix" returnType="void" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="rows" type="size_t"/>
+        <variable const="false" name="cols" type="size_t"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="fillMatrix" returnType="void" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="reference" type="{const}_Matrix*"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="deleteMatrix" returnType="void" view="DEFAULT" visibility="PRIVATE"/>
+    </entity>
+  </diagramElements>
+  <umlView grid="15" name="Main view" open="true">
+    <relationView color="-12566464" relationId="230">
+      <line>
+        <point>
+          <x>601</x>
+          <y>316</y>
+        </point>
+        <point>
+          <x>601</x>
+          <y>286</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>286</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>221</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="222">
+      <line>
+        <point>
+          <x>376</x>
+          <y>316</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>221</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="221">
+      <line>
+        <point>
+          <x>151</x>
+          <y>316</y>
+        </point>
+        <point>
+          <x>151</x>
+          <y>286</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>286</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>221</y>
+        </point>
+      </line>
+    </relationView>
+    <componentView color="-2079" componentID="231" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>720</x>
+        <y>45</y>
+        <w>570</w>
+        <h>445</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="223" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>495</x>
+        <y>315</y>
+        <w>210</w>
+        <h>70</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="214" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>270</x>
+        <y>315</y>
+        <w>210</w>
+        <h>70</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="169" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>45</x>
+        <y>315</y>
+        <w>210</w>
+        <h>70</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="1" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>270</x>
+        <y>135</y>
+        <w>210</w>
+        <h>85</h>
+      </geometry>
+    </componentView>
+  </umlView>
+</classDiagram>
