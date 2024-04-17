@@ -62,6 +62,18 @@ public:
      */
     virtual std::ostream& formatToStream(std::ostream& os) const;
 
+    /**
+     * Retrieve the consumption of the ship
+     * @param distance the distance to travel
+     * @param speed the speed at which to travel
+     * @return the consumption of the ship
+     * @throw invalid_argument if the distance is negative
+     * @throw invalid_argument if the speed is negative or greater than
+     *                         the squadron's maximum speed
+     */
+    [[nodiscard]] long double getConsumption(long double distance,
+                                             long double speed) const;
+
 private:
     std::optional<std::string> nickname;
     unsigned id;

@@ -109,14 +109,14 @@ long double Squadron::getConsumption(long double distance,
         throw std::invalid_argument("Speed and distance must be positive");
     }
 
-    if (speed > getMaximumSpeed()) {
-        throw std::invalid_argument(
-            "Speed must be less than the squadron's maximum speed");
+    long double totalConsumption = 0;
+    Node* current = head;
+    while (current) {
+        totalConsumption += current->ship->getConsumption(distance, speed);
+        current = current->next;
     }
 
-    long double weight = getTotalWeight();
-    return std::cbrt(weight) / 2 * log10l(weight * speed) *
-           log10l(distance + 1);
+    return totalConsumption;
 }
 
 Squadron Squadron::addShipCopy(Ship& ship) const {

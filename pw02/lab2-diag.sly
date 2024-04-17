@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="iso-8859-15" standalone="no"?>
 <classDiagram>
   <diagramElements defaultViewEntities="ALL" defaultViewEnum="true" defaultViewMethods="TYPE_AND_NAME" defaultVisibleTypes="true" informations="" name="Squadron">
-    <association aggregation="NONE" direction="FIRST_TO_SECOND" id="13658" name="linked to">
-      <role componentId="11334" name="" visibility="PRIVATE">
-        <multiplicity>
-          <min>2147483647</min>
-          <max>2147483647</max>
-        </multiplicity>
-      </role>
-      <role componentId="9147" name="ship" visibility="PRIVATE">
-        <multiplicity>
-          <min>1</min>
-          <max>1</max>
-        </multiplicity>
-      </role>
-    </association>
-    <association aggregation="COMPOSE" direction="FIRST_TO_SECOND" id="13509" name="contains">
-      <role componentId="9146" name="" visibility="PRIVATE">
-        <multiplicity>
-          <min>1</min>
-          <max>1</max>
-        </multiplicity>
-      </role>
-      <role componentId="11334" name="head" visibility="PRIVATE">
+    <inheritance id="11684">
+      <child>9154</child>
+      <parent>9151</parent>
+    </inheritance>
+    <inheritance id="11685">
+      <child>9153</child>
+      <parent>9151</parent>
+    </inheritance>
+    <inheritance id="12140">
+      <child>9974</child>
+      <parent>12138</parent>
+    </inheritance>
+    <inheritance id="12141">
+      <child>9150</child>
+      <parent>12138</parent>
+    </inheritance>
+    <inheritance id="13378">
+      <child>9151</child>
+      <parent>9147</parent>
+    </inheritance>
+    <inheritance id="13379">
+      <child>12138</child>
+      <parent>9147</parent>
+    </inheritance>
+    <association aggregation="NONE" direction="SECOND_TO_FIRST" id="11822" name="followed by">
+      <role componentId="11334" name="next" visibility="PRIVATE">
         <multiplicity>
           <min>0</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="11334" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
           <max>1</max>
         </multiplicity>
       </role>
@@ -43,121 +53,34 @@
         </multiplicity>
       </role>
     </association>
-    <inheritance id="13379">
-      <child>12138</child>
-      <parent>9147</parent>
-    </inheritance>
-    <inheritance id="13378">
-      <child>9151</child>
-      <parent>9147</parent>
-    </inheritance>
-    <inheritance id="12141">
-      <child>9150</child>
-      <parent>12138</parent>
-    </inheritance>
-    <inheritance id="12140">
-      <child>9974</child>
-      <parent>12138</parent>
-    </inheritance>
-    <entity entityType="CLASS" id="12138" isAbstract="true" name="TIEBase" visibility="PUBLIC">
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_TIEBase" returnType="" view="DEFAULT" visibility="PROTECTED">
-        <variable const="false" name="id" type="unsigned"/>
-      </method>
-      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-    </entity>
-    <inheritance id="11685">
-      <child>9153</child>
-      <parent>9151</parent>
-    </inheritance>
-    <inheritance id="11684">
-      <child>9154</child>
-      <parent>9151</parent>
-    </inheritance>
-    <association aggregation="NONE" direction="SECOND_TO_FIRST" id="11822" name="followed by">
-      <role componentId="11334" name="next" visibility="PRIVATE">
+    <association aggregation="COMPOSE" direction="FIRST_TO_SECOND" id="13509" name="contains">
+      <role componentId="9146" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="11334" name="head" visibility="PRIVATE">
         <multiplicity>
           <min>0</min>
           <max>1</max>
         </multiplicity>
       </role>
+    </association>
+    <association aggregation="NONE" direction="FIRST_TO_SECOND" id="13658" name="linked to">
       <role componentId="11334" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>2147483647</min>
+          <max>2147483647</max>
+        </multiplicity>
+      </role>
+      <role componentId="9147" name="ship" visibility="PRIVATE">
         <multiplicity>
           <min>1</min>
           <max>1</max>
         </multiplicity>
       </role>
     </association>
-    <entity entityType="CLASS" id="11334" isAbstract="false" name="Squadron::Node" visibility="PRIVATE"/>
-    <entity entityType="CLASS" id="9974" isAbstract="false" name="TIE" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="TIE" returnType="" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
-    </entity>
-    <entity entityType="CLASS" id="9154" isAbstract="false" name="StarDreadnought" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_StarDreadnought" returnType="" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="cargo" type="double"/>
-      </method>
-      <method isAbstract="false" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-    </entity>
-    <entity entityType="CLASS" id="9153" isAbstract="false" name="Shuttle" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_Shuttle" returnType="" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="cargo" type="double"/>
-      </method>
-      <method isAbstract="false" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-    </entity>
-    <entity entityType="CLASS" id="9151" isAbstract="true" name="CargoShip" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="false" name="cargo" type="long_double" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="CargoShip" returnType="" view="DEFAULT" visibility="PROTECTED">
-        <variable const="false" name="cargo" type="long_double"/>
-        <variable const="false" name="id" type="unsigned"/>
-        <variable const="false" name="maxCapacity" type="long_double"/>
-      </method>
-      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="true" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getCargo_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="formatToStream_const" returnType="ostream&amp;" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="os" type="ostream&amp;"/>
-      </method>
-      <method isAbstract="false" isStatic="true" name="validateCargo" returnType="long_double" view="DEFAULT" visibility="PRIVATE">
-        <variable const="false" name="amount" type="long_double"/>
-        <variable const="false" name="maxCapacity" type="long_double"/>
-      </method>
-    </entity>
-    <entity entityType="CLASS" id="9150" isAbstract="false" name="TIEInterceptor" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="false" isStatic="false" name="TIEInterceptor" returnType="" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
-    </entity>
-    <entity entityType="CLASS" id="9147" isAbstract="true" name="Ship" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="false" name="nickname" type="optional&lt;string&gt;" visibility="PRIVATE"/>
-      <attribute const="false" defaultValue="" isStatic="false" name="id" type="unsigned" visibility="PRIVATE"/>
-      <method is-constructor="true" isAbstract="true" isStatic="false" name="explicit_Ship" returnType="" view="DEFAULT" visibility="PROTECTED">
-        <variable const="false" name="id" type="unsigned"/>
-      </method>
-      <method is-constructor="true" isAbstract="true" isStatic="false" name="~Ship" returnType="" view="DEFAULT" visibility="PROTECTED"/>
-      <method isAbstract="true" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="true" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="true" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="setNickname" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="newNickname" type="const_string&amp;"/>
-      </method>
-      <method isAbstract="false" isStatic="false" name="formatToStream_const" returnType="ostream&amp;" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="os" type="ostream&amp;"/>
-      </method>
-    </entity>
     <entity entityType="CLASS" id="9146" isAbstract="false" name="Squadron" visibility="PUBLIC">
       <attribute const="false" defaultValue="" isStatic="false" name="name" type="string" visibility="PRIVATE"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_Squadron" returnType="" view="DEFAULT" visibility="PUBLIC">
@@ -225,221 +148,128 @@
       </method>
       <method isAbstract="false" isStatic="false" name="clear" returnType="void" view="DEFAULT" visibility="PRIVATE"/>
     </entity>
+    <entity entityType="CLASS" id="9147" isAbstract="true" name="Ship" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="nickname" type="optional&lt;string&gt;" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="id" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="true" isStatic="false" name="explicit_Ship" returnType="" view="DEFAULT" visibility="PROTECTED">
+        <variable const="false" name="id" type="unsigned"/>
+      </method>
+      <method is-constructor="true" isAbstract="true" isStatic="false" name="~Ship" returnType="" view="DEFAULT" visibility="PROTECTED"/>
+      <method isAbstract="true" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="setNickname" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="newNickname" type="const_string&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getConsumption_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="distance" type="long_double"/>
+        <variable const="false" name="speed" type="long_double"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="formatToStream_const" returnType="ostream&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="os" type="ostream&amp;"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="9150" isAbstract="false" name="TIEInterceptor" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="TIEInterceptor" returnType="" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="9151" isAbstract="true" name="CargoShip" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="cargo" type="long_double" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="true" isStatic="false" name="CargoShip" returnType="" view="DEFAULT" visibility="PROTECTED">
+        <variable const="false" name="cargo" type="long_double"/>
+        <variable const="false" name="id" type="unsigned"/>
+        <variable const="false" name="maxCapacity" type="long_double"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="true" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getCargo_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="formatToStream_const" returnType="ostream&amp;" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="os" type="ostream&amp;"/>
+      </method>
+      <method isAbstract="false" isStatic="true" name="validateCargo" returnType="long_double" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="amount" type="long_double"/>
+        <variable const="false" name="maxCapacity" type="long_double"/>
+      </method>
+    </entity>
+    <entity entityType="CLASS" id="9153" isAbstract="false" name="Shuttle" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_Shuttle" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="cargo" type="double"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="9154" isAbstract="false" name="StarDreadnought" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_StarDreadnought" returnType="" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="cargo" type="double"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getBaseWeight_const" returnType="double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumCargoCapacity_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="9974" isAbstract="false" name="TIE" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="true" name="idCounter" type="unsigned" visibility="PRIVATE"/>
+      <method is-constructor="true" isAbstract="false" isStatic="false" name="TIE" returnType="" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getWeight_const" returnType="long_double" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="getMaximumSpeed_const" returnType="unsigned_long_long" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
+    <entity entityType="CLASS" id="11334" isAbstract="false" name="Squadron::Node" visibility="PRIVATE"/>
+    <entity entityType="CLASS" id="12138" isAbstract="true" name="TIEBase" visibility="PUBLIC">
+      <method is-constructor="true" isAbstract="true" isStatic="false" name="explicit_TIEBase" returnType="" view="DEFAULT" visibility="PROTECTED">
+        <variable const="false" name="id" type="unsigned"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="getModelName_const" returnType="string" view="DEFAULT" visibility="PUBLIC"/>
+    </entity>
   </diagramElements>
   <umlView grid="15" name="Main view" open="true">
-    <relationView color="-12566464" relationId="11822">
+    <relationView color="-12566464" relationId="13658">
       <line>
         <point>
-          <x>766</x>
-          <y>691</y>
+          <x>676</x>
+          <y>716</y>
         </point>
         <point>
-          <x>811</x>
-          <y>691</y>
-        </point>
-        <point>
-          <x>811</x>
-          <y>631</y>
-        </point>
-        <point>
-          <x>736</x>
-          <y>631</y>
-        </point>
-        <point>
-          <x>736</x>
-          <y>676</y>
+          <x>676</x>
+          <y>811</y>
         </point>
       </line>
       <labelAssociation>
-        <x>818</x>
-        <y>621</y>
-        <w>75</w>
+        <x>693</x>
+        <y>746</y>
+        <w>56</w>
         <h>16</h>
       </labelAssociation>
       <roleAssociation>
-        <x>786</x>
-        <y>701</y>
-        <w>33</w>
-        <h>16</h>
-      </roleAssociation>
-      <roleAssociation>
-        <x>745</x>
-        <y>654</y>
-        <w>0</w>
-        <h>16</h>
-      </roleAssociation>
-      <multipliciteAssociation>
-        <x>788</x>
+        <x>680</x>
         <y>720</y>
-        <w>23</w>
-        <h>16</h>
-      </multipliciteAssociation>
-      <multipliciteAssociation>
-        <x>713</x>
-        <y>651</y>
-        <w>8</w>
-        <h>16</h>
-      </multipliciteAssociation>
-    </relationView>
-    <relationView color="-12566464" relationId="11684">
-      <line>
-        <point>
-          <x>211</x>
-          <y>1366</y>
-        </point>
-        <point>
-          <x>211</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>376</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>376</x>
-          <y>1301</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="11685">
-      <line>
-        <point>
-          <x>496</x>
-          <y>1366</y>
-        </point>
-        <point>
-          <x>496</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>376</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>376</x>
-          <y>1301</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="12140">
-      <line>
-        <point>
-          <x>871</x>
-          <y>1366</y>
-        </point>
-        <point>
-          <x>871</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>1036</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>1036</x>
-          <y>1301</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="12141">
-      <line>
-        <point>
-          <x>1201</x>
-          <y>1366</y>
-        </point>
-        <point>
-          <x>1201</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>1036</x>
-          <y>1336</y>
-        </point>
-        <point>
-          <x>1036</x>
-          <y>1301</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="13378">
-      <line>
-        <point>
-          <x>376</x>
-          <y>1126</y>
-        </point>
-        <point>
-          <x>376</x>
-          <y>1096</y>
-        </point>
-        <point>
-          <x>676</x>
-          <y>1096</y>
-        </point>
-        <point>
-          <x>676</x>
-          <y>1031</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="13379">
-      <line>
-        <point>
-          <x>1036</x>
-          <y>1216</y>
-        </point>
-        <point>
-          <x>1036</x>
-          <y>1096</y>
-        </point>
-        <point>
-          <x>676</x>
-          <y>1096</y>
-        </point>
-        <point>
-          <x>676</x>
-          <y>1031</y>
-        </point>
-      </line>
-    </relationView>
-    <relationView color="-12566464" relationId="13417">
-      <line>
-        <point>
-          <x>511</x>
-          <y>536</y>
-        </point>
-        <point>
-          <x>511</x>
-          <y>841</y>
-        </point>
-      </line>
-      <labelAssociation>
-        <x>523</x>
-        <y>681</y>
-        <w>38</w>
-        <h>16</h>
-      </labelAssociation>
-      <roleAssociation>
-        <x>515</x>
-        <y>540</y>
         <w>0</w>
         <h>16</h>
       </roleAssociation>
       <roleAssociation>
-        <x>447</x>
-        <y>789</y>
-        <w>45</w>
+        <x>626</x>
+        <y>759</y>
+        <w>30</w>
         <h>16</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>498</x>
-        <y>540</y>
+        <x>655</x>
+        <y>725</y>
         <w>7</w>
         <h>16</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>469</x>
-        <y>807</y>
-        <w>23</w>
+        <x>649</x>
+        <y>779</y>
+        <w>8</w>
         <h>16</h>
       </multipliciteAssociation>
     </relationView>
@@ -447,156 +277,330 @@
       <line>
         <point>
           <x>676</x>
-          <y>536</y>
+          <y>551</y>
         </point>
         <point>
           <x>676</x>
-          <y>676</y>
+          <y>661</y>
         </point>
       </line>
       <labelAssociation>
-        <x>687</x>
-        <y>589</y>
+        <x>678</x>
+        <y>576</y>
         <w>54</w>
         <h>16</h>
       </labelAssociation>
       <roleAssociation>
         <x>680</x>
-        <y>540</y>
+        <y>555</y>
         <w>0</w>
         <h>16</h>
       </roleAssociation>
       <roleAssociation>
         <x>619</x>
-        <y>627</y>
+        <y>612</y>
         <w>36</w>
         <h>16</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>646</x>
-        <y>554</y>
+        <x>649</x>
+        <y>564</y>
         <w>8</w>
         <h>16</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
         <x>632</x>
-        <y>647</y>
+        <y>632</y>
         <w>23</w>
         <h>16</h>
       </multipliciteAssociation>
     </relationView>
-    <relationView color="-12566464" relationId="13658">
+    <relationView color="-12566464" relationId="13417">
       <line>
         <point>
-          <x>676</x>
-          <y>731</y>
+          <x>511</x>
+          <y>551</y>
         </point>
         <point>
-          <x>676</x>
-          <y>841</y>
+          <x>511</x>
+          <y>811</y>
         </point>
       </line>
       <labelAssociation>
-        <x>684</x>
-        <y>772</y>
-        <w>56</w>
+        <x>515</x>
+        <y>685</y>
+        <w>38</w>
         <h>16</h>
       </labelAssociation>
       <roleAssociation>
-        <x>680</x>
-        <y>735</y>
+        <x>515</x>
+        <y>555</y>
         <w>0</w>
         <h>16</h>
       </roleAssociation>
       <roleAssociation>
-        <x>628</x>
-        <y>792</y>
-        <w>30</w>
+        <x>446</x>
+        <y>753</y>
+        <w>45</w>
         <h>16</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>652</x>
-        <y>745</y>
+        <x>498</x>
+        <y>555</y>
         <w>7</w>
         <h>16</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>650</x>
-        <y>810</y>
+        <x>466</x>
+        <y>772</y>
+        <w>23</w>
+        <h>16</h>
+      </multipliciteAssociation>
+    </relationView>
+    <relationView color="-12566464" relationId="11822">
+      <line>
+        <point>
+          <x>766</x>
+          <y>676</y>
+        </point>
+        <point>
+          <x>811</x>
+          <y>676</y>
+        </point>
+        <point>
+          <x>811</x>
+          <y>616</y>
+        </point>
+        <point>
+          <x>736</x>
+          <y>616</y>
+        </point>
+        <point>
+          <x>736</x>
+          <y>661</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>814</x>
+        <y>624</y>
+        <w>75</w>
+        <h>16</h>
+      </labelAssociation>
+      <roleAssociation>
+        <x>786</x>
+        <y>686</y>
+        <w>33</w>
+        <h>16</h>
+      </roleAssociation>
+      <roleAssociation>
+        <x>745</x>
+        <y>639</y>
+        <w>0</w>
+        <h>16</h>
+      </roleAssociation>
+      <multipliciteAssociation>
+        <x>788</x>
+        <y>705</y>
+        <w>23</w>
+        <h>16</h>
+      </multipliciteAssociation>
+      <multipliciteAssociation>
+        <x>713</x>
+        <y>636</y>
         <w>8</w>
         <h>16</h>
       </multipliciteAssociation>
     </relationView>
-    <componentView color="-2079" componentID="9146" displayAttributes="true" displayDefault="true" displayMethods="true">
+    <relationView color="-12566464" relationId="13379">
+      <line>
+        <point>
+          <x>1036</x>
+          <y>1156</y>
+        </point>
+        <point>
+          <x>1036</x>
+          <y>1051</y>
+        </point>
+        <point>
+          <x>676</x>
+          <y>1051</y>
+        </point>
+        <point>
+          <x>676</x>
+          <y>1016</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="13378">
+      <line>
+        <point>
+          <x>376</x>
+          <y>1066</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>1051</y>
+        </point>
+        <point>
+          <x>676</x>
+          <y>1051</y>
+        </point>
+        <point>
+          <x>676</x>
+          <y>1016</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="12141">
+      <line>
+        <point>
+          <x>1201</x>
+          <y>1291</y>
+        </point>
+        <point>
+          <x>1201</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>1036</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>1036</x>
+          <y>1241</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="12140">
+      <line>
+        <point>
+          <x>871</x>
+          <y>1291</y>
+        </point>
+        <point>
+          <x>871</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>1036</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>1036</x>
+          <y>1241</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="11685">
+      <line>
+        <point>
+          <x>496</x>
+          <y>1291</y>
+        </point>
+        <point>
+          <x>496</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>1241</y>
+        </point>
+      </line>
+    </relationView>
+    <relationView color="-12566464" relationId="11684">
+      <line>
+        <point>
+          <x>211</x>
+          <y>1291</y>
+        </point>
+        <point>
+          <x>211</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>1276</y>
+        </point>
+        <point>
+          <x>376</x>
+          <y>1241</y>
+        </point>
+      </line>
+    </relationView>
+    <componentView color="-2079" componentID="12138" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>405</x>
-        <y>105</y>
-        <w>540</w>
-        <h>430</h>
-      </geometry>
-    </componentView>
-    <componentView color="-2079" componentID="9147" displayAttributes="true" displayDefault="true" displayMethods="true">
-      <geometry>
-        <x>450</x>
-        <y>840</y>
-        <w>450</w>
-        <h>190</h>
-      </geometry>
-    </componentView>
-    <componentView color="-2079" componentID="9151" displayAttributes="true" displayDefault="true" displayMethods="true">
-      <geometry>
-        <x>120</x>
-        <y>1125</y>
-        <w>510</w>
-        <h>175</h>
-      </geometry>
-    </componentView>
-    <componentView color="-2079" componentID="9153" displayAttributes="true" displayDefault="true" displayMethods="true">
-      <geometry>
-        <x>390</x>
-        <y>1365</y>
-        <w>300</w>
-        <h>145</h>
-      </geometry>
-    </componentView>
-    <componentView color="-2079" componentID="9154" displayAttributes="true" displayDefault="true" displayMethods="true">
-      <geometry>
-        <x>60</x>
-        <y>1365</y>
-        <w>300</w>
-        <h>145</h>
-      </geometry>
-    </componentView>
-    <componentView color="-2079" componentID="9974" displayAttributes="true" displayDefault="true" displayMethods="true">
-      <geometry>
-        <x>720</x>
-        <y>1365</y>
-        <w>300</w>
-        <h>130</h>
+        <x>915</x>
+        <y>1155</y>
+        <w>240</w>
+        <h>85</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="11334" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>585</x>
-        <y>675</y>
+        <y>660</y>
         <w>180</w>
         <h>55</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="9974" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>720</x>
+        <y>1290</y>
+        <w>300</w>
+        <h>130</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="9154" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>60</x>
+        <y>1290</y>
+        <w>300</w>
+        <h>145</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="9153" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>390</x>
+        <y>1290</y>
+        <w>300</w>
+        <h>145</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="9151" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>120</x>
+        <y>1065</y>
+        <w>510</w>
+        <h>175</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="9150" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>1050</x>
-        <y>1365</y>
+        <y>1290</y>
         <w>300</w>
         <h>130</h>
       </geometry>
     </componentView>
-    <componentView color="-2079" componentID="12138" displayAttributes="true" displayDefault="true" displayMethods="true">
+    <componentView color="-2079" componentID="9147" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>915</x>
-        <y>1215</y>
-        <w>240</w>
-        <h>85</h>
+        <x>420</x>
+        <y>810</y>
+        <w>510</w>
+        <h>205</h>
+      </geometry>
+    </componentView>
+    <componentView color="-2079" componentID="9146" displayAttributes="true" displayDefault="true" displayMethods="true">
+      <geometry>
+        <x>405</x>
+        <y>120</y>
+        <w>540</w>
+        <h>430</h>
       </geometry>
     </componentView>
     <note color="-2079" content="operator&lt;&lt;(os : ostream&amp;, ship: const_Ship&amp;) : ostream&amp;">
@@ -612,26 +616,26 @@
           <y>871</y>
         </point>
         <point>
-          <x>901</x>
-          <y>871</y>
+          <x>931</x>
+          <y>856</y>
         </point>
       </noteLine>
     </note>
     <note color="-2079" content="operator&lt;&lt;(os : ostream&amp;, squad const_Squadron&amp;) : ostream&amp;">
       <noteGeometry>
         <x>990</x>
-        <y>115</y>
-        <w>370</w>
+        <y>130</y>
+        <w>371</w>
         <h>30</h>
       </noteGeometry>
       <noteLine color="-12566464" relationId="9146">
         <point>
           <x>991</x>
-          <y>136</y>
+          <y>151</y>
         </point>
         <point>
           <x>946</x>
-          <y>136</y>
+          <y>151</y>
         </point>
       </noteLine>
     </note>
@@ -639,7 +643,7 @@
       <noteGeometry>
         <x>995</x>
         <y>660</y>
-        <w>193</w>
+        <w>194</w>
         <h>30</h>
       </noteGeometry>
       <noteLine color="-12566464" relationId="11822">
@@ -649,7 +653,7 @@
         </point>
         <point>
           <x>811</x>
-          <y>676</y>
+          <y>662</y>
         </point>
       </noteLine>
     </note>
@@ -667,43 +671,43 @@
         </point>
         <point>
           <x>511</x>
-          <y>691</y>
+          <y>707</y>
         </point>
       </noteLine>
     </note>
     <note color="-2079" content="operator-(squadron : const_Squadron&amp;, ship : const_Ship&amp;) : Squadron">
       <noteGeometry>
         <x>990</x>
-        <y>210</y>
+        <y>225</y>
         <w>409</w>
         <h>30</h>
       </noteGeometry>
       <noteLine color="-12566464" relationId="9146">
         <point>
           <x>991</x>
-          <y>226</y>
+          <y>241</y>
         </point>
         <point>
           <x>946</x>
-          <y>226</y>
+          <y>241</y>
         </point>
       </noteLine>
     </note>
     <note color="-2079" content="operator+(squadron : const_Squadron&amp;, ship : Ship&amp;) : Squadron">
       <noteGeometry>
         <x>990</x>
-        <y>165</y>
+        <y>180</y>
         <w>376</w>
         <h>30</h>
       </noteGeometry>
       <noteLine color="-12566464" relationId="9146">
         <point>
           <x>991</x>
-          <y>181</y>
+          <y>196</y>
         </point>
         <point>
           <x>946</x>
-          <y>181</y>
+          <y>196</y>
         </point>
       </noteLine>
     </note>

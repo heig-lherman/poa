@@ -142,6 +142,8 @@ public:
 
     /**
      * Retrieve the consumption of the squadron
+     * @param distance the distance to travel
+     * @param speed the speed at which to travel
      * @return the consumption of the squadron
      * @throw invalid_argument if the distance is negative
      * @throw invalid_argument if the speed is negative or greater than
