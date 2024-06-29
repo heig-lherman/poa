@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="buffy (50x50 10v 20h) [run]" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="50 50 10 20" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="buffy" TARGET_NAME="buffy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="buffy" RUN_TARGET_NAME="buffy">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
